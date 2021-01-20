@@ -1,0 +1,118 @@
+Programming Concepts
+Variables:
+- In programming, data is stored in containers
+- When assinging data, the correct container must be used
+- Example: Gender and Age
+		char gender (container);
+		int age (container);
+		gender = 'M';
+		age = 21;
+
+Standard Input/Output:
+- Input would use scanf();
+- Output would use printf();
+- Example: Asking someone's gender and age
+		char gender;
+		int age;
+		printf("What is your gender?");
+		scanf("%c", &gender);
+
+		printf("What is your age?");
+		scanf("%i", &age);
+
+		printf("Your gender is %c and you are %i years old", gender, age);
+
+Selection:
+- Decision making times
+- if(), if else(), else
+- Example 1: Whether John needs to go to work
+		char sick;
+		printf("Is John sick?");
+		scanf("%c", &sick);
+
+		if (sick == 'Y')
+		{
+			printf("John does not need to go to work.");
+		}
+		
+		else
+		{
+			printf("John needs to go to work.");
+		}
+
+- Example 2: Whether John needs to go to work, and if he's sick, goes to hospital or clinic
+		char sick;
+		char condition;
+		printf("Is John sick?");
+		scanf("%c", &sick);
+
+		if (sick == 'Y')
+		{
+			printf("John does not need to go to work.");
+			printf("\nIs John very sick?");
+			scanf("%c", &condition);
+
+			if (condition == 'Y')
+			{
+				printf("John needs to go to a hospital.");
+			}
+			
+			else
+			{
+				printf("John can go to a hospital or a clinic.");
+			}
+		}
+		
+		else
+		{
+			printf("John needs to go to work.");
+		}
+
+Loop:
+- repeatingly executing the same action
+- checking a condition until it is true or false
+- while(), for()
+Example: Guessing a random number
+	int rand_x;
+	int input;
+	int d = 0; /* To initialise loop */
+	
+	srand( (unsigned) time(NULL)); 
+	rand_x = rand()%101; 
+	
+	while (d < 1)
+	{
+		printf("\nGuess the random number between 0 to 100:");
+		scanf("%i", &input);
+	
+		if (input > rand_x)
+			printf("The guessed number is larger than the random number.");
+		
+		else if (input < rand_x)
+			printf("The guessed number is lesser than the random number.");
+		
+		else
+		{
+			printf("Congratulations! You've guessed it right! The random number is indeed %i.", rand_x);
+			break;
+		}
+	}
+
+Array:
+- similar to declaring a variable, only difference is that you add a [] behind the variable name (e.g. int array[10];).
+- an array's first position is 0, not 1.
+- loops are commonly used when dealing with arrays.
+Example: Printing number 20 to 1 and printing one specific number
+	int array[20];
+	int counter;
+	int plus = 1;
+
+	for(counter = 0; counter <= 19; counter++)
+	{
+		array[counter] = plus;
+		printf("\n%i", array[counter]);
+		plus++;
+	}
+
+	printf("\nThe number in the 6th position in the array is %i", array[5]);
+	
